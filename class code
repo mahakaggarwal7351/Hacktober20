@@ -1,0 +1,40 @@
+import java.util.*;
+public class code
+{
+    int count(String str)
+    {
+         int count = 0; 
+         char c;
+        for(int i = 0; i < str.length(); i++)
+        {  
+            c=str.charAt(i);
+            if(c != ' ')  
+                count++;  
+        }  
+        return count;
+    }
+    int count_one(int num)
+    {
+        int sum=0, a;
+	while(num>0 || sum>9){
+	    if(num==0){
+		    num = sum;
+			sum = 0;
+		}
+		a = num%10;
+		sum = sum + a;
+		num = num/10;
+	}
+        return sum;
+    }
+    public static void main(String args[])
+    {
+        int c=0;
+        String s;
+        Scanner in = new Scanner(System.in);
+        s=in.nextLine();
+        code ob = new code();
+        c=ob.count(s);
+        System.out.println(ob.count_one(c));
+    }
+}
